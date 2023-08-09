@@ -1,0 +1,9 @@
+pandas 
+numpy 
+sklearn 
+notebook 
+matplotlib
+scikit-learn
+pickle
+
+
