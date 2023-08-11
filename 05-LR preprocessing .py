@@ -11,7 +11,8 @@ import pickle
 import matplotlib.pyplot as plt
 from matplotlib import style
 import joblib
-# Data
+
+# Collect Data
 data = pd.read_csv("student-por.csv", sep=";")
 data = data[[ "G2", "G3", "studytime",  "absences" , "sex"]]
 ""
@@ -34,7 +35,8 @@ predict = "G3"
 # print(data['sex'].unique()[1])
 #  M
 
-
+# 1. Add a new Column to our Data Frame:
+# In Pandas if you make a column you should have data for each row !
 #  We create  a new column n_sex  with  0,1 instead of  its values F=0 , M=1
 data["n_sex"] = [ 0 if  i == "F" else 1 for i in data["sex"]]
 # print(data)
@@ -90,7 +92,7 @@ y = np.array(data[predict])
 #  11]
 
 
-# Changing string into Numeric 
+# 2. Changing string into Numeric 
 
 # x = np.array(data.drop([predict], axis=1))
 # y = np.array(data[predict])
@@ -102,6 +104,7 @@ model.fit(x_train, y_train)
 acc = model.score(x_test, y_test)
 # print(acc)
 # accuracy 0.9488380854381475
+
 #  accuracy increased !
 print(f" new accuracy {acc}")
 # #  new 0.9503684647628233
@@ -111,8 +114,14 @@ print(f" new accuracy {acc}")
 # print(y)
 # ['lr.save']
 
+# DONE!
 
 
+
+
+
+
+# ==========================================================================
 
 # Loading Model
 # pickle_in = open("studentGradeModel.pickle", "rb")
