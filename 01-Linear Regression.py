@@ -32,7 +32,7 @@ print("Model Accuracy: ", accuracy)  # Model Accuracy:  0.7852231040709795
 # We have a 5 dimensional space here so we have 5 Coefficients! (our line starting position depending on 5 axis )
 
 
-# ====CALCULATE MANUALLY PREDICT  & =========TEST for one event/student =====================================================
+# ====CALCULATE MANUALLY The PREDICT =========TEST for one event/student =====================================================
 
 # a linear equation which exist in our  MODEL : y = mx + b
 # To get  Slops for each feature for one event/student based on :"G1", "G2", "studytime", "failures", "absences"
@@ -71,11 +71,8 @@ for i in range(len(predictions)):
     print("Real Label: ", y_test[i])
     print("#####################################")
     
-    
 
-
-
-
+# Output:
 # #####################################
 # Data #1
 # Prediction:  15.307423161224836

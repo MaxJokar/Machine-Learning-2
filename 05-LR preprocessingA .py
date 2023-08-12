@@ -1,21 +1,23 @@
 """
-Data Preprocessing helps to prepare the datas before any processing , 
-here I am showing some simple methods on a  data frame 
+we add one Column to our dataFrame, it has only  2 classes  like  Male,Female .
+So, we convert it into  1 for Males and  0 for  females . Converting string into Numeric 
+If only it has just 2 classes like  F , M ==> 0,1
+Then  we createa new column in our DataFrame  and fill in its rows , 
+also 
 using Pandas how to convert a  string into  Numeric 
 """
 import numpy as np
 import pandas as pd
 import sklearn
 from sklearn import linear_model
-import pickle
-import matplotlib.pyplot as plt
-from matplotlib import style
-import joblib
+
 
 # Collect Data
 data = pd.read_csv("student-por.csv", sep=";")
+# Data Selection
 data = data[[ "G2", "G3", "studytime",  "absences" , "sex"]]
-""
+
+# Clean Data 
 predict = "G3"
 
 
@@ -36,8 +38,9 @@ predict = "G3"
 #  M
 
 # 1. Add a new Column to our Data Frame:
-# In Pandas if you make a column you should have data for each row !
+# In Pandas if you make a column you should have data for each its row !
 #  We create  a new column n_sex  with  0,1 instead of  its values F=0 , M=1
+# This shows how we can create a new column and change its strings into Numeric 
 data["n_sex"] = [ 0 if  i == "F" else 1 for i in data["sex"]]
 # print(data)
 
@@ -46,10 +49,10 @@ data["n_sex"] = [ 0 if  i == "F" else 1 for i in data["sex"]]
 # 1    11  11          2         2   F      0
 # 2    13  12          2         6   F      0
 # 3    14  14          3         0   F      0
-# 47  10  10           1         6    M     1
+# 47   10  10          1         6   M      1
 # 648  11  11          1         4   M      1
 
-
+#  Clearn Data 
 x = np.array(data.drop([predict , 'sex'], axis=1))
 # print(x)
 
@@ -92,15 +95,18 @@ y = np.array(data[predict])
 #  11]
 
 
-# 2. Changing string into Numeric 
+
 
 # x = np.array(data.drop([predict], axis=1))
 # y = np.array(data[predict])
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1, random_state = 123)
 
 
+#  Make Model
 model = linear_model.LinearRegression()
+#  Train 
 model.fit(x_train, y_train)
+# Test
 acc = model.score(x_test, y_test)
 # print(acc)
 # accuracy 0.9488380854381475
@@ -118,26 +124,6 @@ print(f" new accuracy {acc}")
 
 
 
-
-
-
-# ==========================================================================
-
-# Loading Model
-# pickle_in = open("studentGradeModel.pickle", "rb")
-# linear = pickle.load(pickle_in) 
-
-
-# style.use("ggplot")
-# plt.scatter(data["G1"],data["G3"], label="G1")
-# #plt.scatter(data["G2"],data["G3"], label="G2")
-# #plt.scatter(data["studytime"],data["G3"], label="studytime")
-# #plt.scatter(data["failures"],data["G3"], label="Failures")
-# #plt.scatter(data["absences"],data["G3"], label="Absences")
-# plt.xlabel("P")
-# plt.ylabel("Final Grade")
-# plt.legend()
-# plt.show()
 
 
 
