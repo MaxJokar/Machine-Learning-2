@@ -12,7 +12,7 @@ from sklearn import metrics
 from sklearn.neighbors import KNeighborsClassifier
 
 data = datasets.load_breast_cancer()
-
+# we define this dat point is equal to Malignant 
 x = data.data
 y = data.target
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.2)
