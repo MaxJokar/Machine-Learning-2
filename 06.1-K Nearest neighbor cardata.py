@@ -30,8 +30,7 @@ data = pd.read_csv("car.data")
 
 # To convert those columns into Numeric we do following:
 myPreprocessor = preprocessing.LabelEncoder()
-
-# # WE can have dimenstion as much as our features belown:
+ # WE can have dimenstion as much as our features belown:
 buying = myPreprocessor.fit_transform(list(data["buying"]))
 maint = myPreprocessor.fit_transform(list(data["maint"]))
 door = myPreprocessor.fit_transform(list(data["door"]))
@@ -40,7 +39,19 @@ lug_boot = myPreprocessor.fit_transform(list(data["lug_boot"]))
 safety = myPreprocessor.fit_transform(list(data["safety"]))
 clas = myPreprocessor.fit_transform(list(data["class"]))
 
+
+# print(data["door"])
+# 0           2
+# 1           2
+# 2           2
+# 3           2
+# 4           2
+
 predit = "class"
+data["door"].unique()
+
+
+
 
 x = list(zip(buying, maint, door, lug_boot, safety))
 y = list(clas)
@@ -48,8 +59,11 @@ y = list(clas)
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
 
 # Driver command
-print(x_train)
+# print(x_train)
 
 # Output:
 # [(2, 1, 0, 2, 1), (1, 1, 2, 2, 1), (2, 2, 3, 1, 0), (0, 0, 0, 0, 1), (1, 2, 3, 0, 1), (3, 0, 1, 2, 0),
 # (2, 3, 2, 1, 2), (0, 3, 2, 2, 2), (2, 0, 2, 2, 2), (0, 3, 0, 0, 1), (0, 2, 1, 0, 0), (2, 3, 0, 0, 0),...
+
+
+# To Be Continued,...
