@@ -40,7 +40,7 @@ lug_boot = myPreprocessor.fit_transform(list(data["lug_boot"]))
 safety = myPreprocessor.fit_transform(list(data["safety"]))
 clas = myPreprocessor.fit_transform(list(data["class"]))
 
-predit = "class"
+predict = "class"
 
 x = list(zip(buying, maint, door, lug_boot, safety))
 y = list(clas)
@@ -60,19 +60,20 @@ for i in range(11,1,-1):
 
     accuracy = model.score(x_test, y_test)
     
-    print("#"*5)
-    if accuracy > best:
-        print(f" this is {i}   accuracy: ", accuracy)
-        best = accuracy
-        with open("carModel.pickle", "wb") as modelFile:
-            pickle.dump(model, modelFile)
-    print("="*10) 
-print("Final Result : ")       
-print("Best Accuracy is : ",best)
+#     print("#"*5)
+#     if accuracy > best:
+#         print(f" this is {i}   accuracy: ", accuracy)
+#         best = accuracy
+#         with open("carModel.pickle", "wb") as modelFile:
+#             pickle.dump(model, modelFile)
+#     print("="*10) 
+# print("Final Result : ")       
+# print("Best Accuracy is : ",best)
+# print("$"*50)
 # Output:
 # To see numbers  <repeted>  {11}
 # #####
-#  this is 11   accuracy:  0.7283236994219653
+#  this is 11   accuracy:  0.653179190751445
 # ==========
 
 # To see numbers  <repeted>  {10}
@@ -81,6 +82,7 @@ print("Best Accuracy is : ",best)
 
 # To see numbers  <repeted>  {9}
 # #####
+#  this is 9   accuracy:  0.7514450867052023
 # ==========
 
 # To see numbers  <repeted>  {8}
@@ -111,11 +113,19 @@ print("Best Accuracy is : ",best)
 # #####
 # ==========
 # Final Result :
-# Best Accuracy is :  0.7283236994219653
+# Best Accuracy is :  0.7514450867052023
+# $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 
 
+
+
+
+
+
+# Predict the data first 
 predicted = model.predict(x_test)
+# # To classify from  0 to 3 
 names = ["unacc", "acc", "good", "vgood"]
 
 print("\n\n#################################")
@@ -123,35 +133,49 @@ for i in range(len(predicted)):
     print(f"Data #{i+1}")
     print("Model Prediction: ", names[predicted[i]])
     print("Input Data: ", x_test[i])
-    print("Real Label: ", names[y_test[i]])
+    print("Actual Data : ", names[y_test[i]])
+    n = model.kneighbors([x_test[i]] , 3, True)
+    print("N ", n)
     print("#################################")
      
     
-    
+
 # Output: 
-# #################################
-# Data #1
-# Model Prediction:  good
-# Input Data:  (3, 0, 0, 1, 2)
-# Real Label:  good
-# #################################
-# Data #2
-# Model Prediction:  good
-# Input Data:  (1, 0, 2, 0, 1)
-# Real Label:  good
-# #################################
-# Data #3
-# Model Prediction:  good
-# Input Data:  (3, 0, 2, 0, 1)
-# Real Label:  good
-# #################################
+#################################
+
 # Data #4
 # Model Prediction:  good
-# Input Data:  (3, 0, 2, 1, 0)
-# Real Label:  good
+# Input Data:  (2, 0, 0, 0, 1)
+# Actual Data :  good
+# N  (array([[0., 0., 1.]]), array([[1553, 1288,  249]], dtype=int64))
 # #################################
 # Data #5
 # Model Prediction:  good
-# Input Data:  (2, 1, 3, 2, 1)
-# Real Label:  good
+# Input Data:  (3, 0, 0, 1, 0)
+# Actual Data :  good
+# N  (array([[0., 0., 1.]]), array([[ 200, 1190, 1081]], dtype=int64))
+# #################################
+# Data #6
+# Model Prediction:  good
+# Input Data:  (2, 0, 2, 2, 1)
+# Actual Data :  good
+# N  (array([[0., 0., 1.]]), array([[859, 500, 769]], dtype=int64))
+# #################################
+# Data #7
+# Model Prediction:  good
+# Input Data:  (0, 1, 0, 1, 2)
+# Actual Data :  good
+# N  (array([[0., 0., 1.]]), array([[ 710, 1299,  156]], dtype=int64))
+# #################################
+# Data #8
+# Model Prediction:  unacc
+# Input Data:  (0, 1, 3, 0, 2)
+# Actual Data :  good
+# N  (array([[0., 0., 1.]]), array([[902, 645,  72]], dtype=int64))
+# #################################
+# Data #9
+# Model Prediction:  good
+# Input Data:  (1, 2, 3, 2, 2)
+# Actual Data :  unacc
+# N  (array([[0., 0., 1.]]), array([[876, 183, 732]], dtype=int64))
 # #################################

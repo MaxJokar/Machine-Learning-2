@@ -1,6 +1,8 @@
 """
+Using car evaluation data set :
 continues of part 6.1 with accuracy calculated given following:
-
+k = Amount of neighbors we look for  
+K should be odd number to easier to pick to classify 
 """
 import numpy as np
 import pandas as pd
