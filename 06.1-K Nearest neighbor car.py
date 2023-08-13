@@ -1,4 +1,6 @@
 """
+In here we have some datas which are string , we should convert them into Numeric
+to be to be used in KNN for  x axis and y axis . 
 in KNN  we don't have Train time but during 
 calculating score "predict" for each point we must calculate with 
 all our  points , which is hard enough
@@ -11,8 +13,7 @@ import numpy as np
 import pandas as pd
 import sklearn
 from sklearn.utils import shuffle
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn import linear_model, preprocessing
+from sklearn import  preprocessing
 
 
 data = pd.read_csv("car.data")
