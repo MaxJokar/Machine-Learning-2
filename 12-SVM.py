@@ -1,3 +1,10 @@
+"""
+The Basis behind Support Vector Machine :
+The larger distance  the larger  margin ,the  more we can 
+separate the two classes  and do more accurate prediction 
+"""
+
+
 import sklearn
 from sklearn import datasets
 from sklearn import svm
@@ -18,4 +25,16 @@ model.fit(x_train, y_train)
 predictions = model.predict(x_test)
 accuracy = metrics.accuracy_score(y_test, predictions)
 
+
+
 print(accuracy)
+# 0.9210526315789473
+
+
+
+
+
+
+
+
+
