@@ -22,5 +22,5 @@
                             * if you have more than two dimensions you go as follows:
                                 d = sqrt(((x2-x1)^2)+((y2-y1)^2)+((z2-z1)^2)+...)
                 if you pick a high number for k your model may chose a bad group which is
-                far from the nearest neighbor simply because that group hsa more members than the nearest group!
+                far from the nearest neighbor simply because that group has more members than the nearest group!
 """
