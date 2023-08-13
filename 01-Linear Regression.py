@@ -3,6 +3,7 @@ ML : I am  representing some datas taken from a
 big data frame and the  predict the Final result/Grade for a 
 situation / student  based on its activity  using sklearn , 
 im the End assure its accuracy  by testing it Manually
+in Regression :we estimate  
 """
 import numpy as np
 import pandas as pd
