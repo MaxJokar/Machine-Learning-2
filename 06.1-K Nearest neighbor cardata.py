@@ -33,7 +33,8 @@ data = pd.read_csv("car.data")
 # 4  vhigh  vhigh    2       2      med    med  unacc
 # As its shown mainly all datas are string : we must transform them into Numeric to be able to use them
 
-# To convert 'Encode ' strings ,  those columns into Numeric we do following:
+# To classify data into certain category
+# And convert 'Encode ' strings ,  those columns into Numeric we do following:
 myPreprocessor = preprocessing.LabelEncoder()
  # WE can have dimenstion as much as our features belown:
 buying = myPreprocessor.fit_transform(list(data["buying"]))
@@ -53,8 +54,8 @@ clas = myPreprocessor.fit_transform(list(data["class"]))
 # 4           2
 
 predit = "class"
-data["door"].unique()
-
+print(data["door"].unique())
+# ['2' '3' '4' '5more' 'more']
 
 
 
@@ -67,18 +68,14 @@ print(f"this is    y  :" , y)
 
 
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
+
+# Driver 
 print(f"this is   x_train : " , x_train)
 # this is   x_train :  [(3, 2, 2, 2, 2), (0, 1, 2, 0, 0),
 print("=="*100)
 print(f"this is   y_train : " , y_train)
 # this is   y_train :  [2, 0, 0, 2, 2, 2, 2, 2, 3, 2, 0, 2, 2, 2,
 
-# Driver command
-print(x_train)
-
-# Output:
-# [(2, 1, 0, 2, 1), (1, 1, 2, 2, 1), (2, 2, 3, 1, 0), (0, 0, 0, 0, 1), (1, 2, 3, 0, 1), (3, 0, 1, 2, 0),
-# (2, 3, 2, 1, 2), (0, 3, 2, 2, 2), (2, 0, 2, 2, 2), (0, 3, 0, 0, 1), (0, 2, 1, 0, 0), (2, 3, 0, 0, 0),...
 
 
 # To Be Continued,...

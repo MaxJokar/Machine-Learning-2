@@ -13,7 +13,7 @@ from sklearn import preprocessing
 
 
 data = pd.read_csv("car.data")
-#print(data.head())
+# print(data.head())
 
 myPreprocessor = preprocessing.LabelEncoder()
 buying = myPreprocessor.fit_transform(list(data["buying"]))
@@ -24,7 +24,12 @@ lug_boot = myPreprocessor.fit_transform(list(data["lug_boot"]))
 safety = myPreprocessor.fit_transform(list(data["safety"]))
 clas = myPreprocessor.fit_transform(list(data["class"]))
 
-predit = "class"
+# print(clas)
+# [2 2 2 ... 2 1 3]
+
+predict = "class"
+print("this is predict :" , predict)
+# this is predict : class
 
 x = list(zip(buying, maint, door, lug_boot, safety))
 y = list(clas)
@@ -35,7 +40,7 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y
 # 'odd' num is necessary cuz model could not decide for 'even' numbers which one is closer or vote
 model = KNeighborsClassifier(n_neighbors=5)
 # Train
-model.fit(x_train,y_train)
+model.fit(x_train, y_train)
 # Test
 accuracy = model.score(x_test, y_test)
 print(accuracy)

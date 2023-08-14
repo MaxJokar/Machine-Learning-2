@@ -6,9 +6,8 @@ Using a loop helps us to implement and find the best soultion .
 import numpy as np
 import pandas as pd
 import sklearn
-from sklearn.utils import shuffle
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn import linear_model, preprocessing
+from sklearn import  preprocessing
 import pickle
 
 
@@ -47,7 +46,7 @@ y = list(clas)
 
 # 30 times select x, y   then train , test and choose the best accuaracy , assign it to best var
 best = 0
-for i in range(11,1,-1):
+for i in range(10,0,-1):
     print(""*5)
     print(f"To see numbers  <repeted> " ,{i})
     x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
@@ -60,29 +59,26 @@ for i in range(11,1,-1):
 
     accuracy = model.score(x_test, y_test)
     
-#     print("#"*5)
-#     if accuracy > best:
-#         print(f" this is {i}   accuracy: ", accuracy)
-#         best = accuracy
-#         with open("carModel.pickle", "wb") as modelFile:
-#             pickle.dump(model, modelFile)
-#     print("="*10) 
-# print("Final Result : ")       
-# print("Best Accuracy is : ",best)
-# print("$"*50)
-# Output:
-# To see numbers  <repeted>  {11}
-# #####
-#  this is 11   accuracy:  0.653179190751445
-# ==========
+    print("#"*5)
+    if accuracy > best:
+        print(f" this is {i}   accuracy: ", accuracy)
+        best = accuracy
+        with open("carModel.pickle", "wb") as modelFile:
+            pickle.dump(model, modelFile)
+    print("="*10) 
+print("Final Result : ")       
+print("Best Accuracy is : ",best)
+print("$"*50)
 
+
+# Output:
 # To see numbers  <repeted>  {10}
 # #####
+#  this is 10   accuracy:  0.7341040462427746
 # ==========
 
 # To see numbers  <repeted>  {9}
 # #####
-#  this is 9   accuracy:  0.7514450867052023
 # ==========
 
 # To see numbers  <repeted>  {8}
@@ -91,6 +87,7 @@ for i in range(11,1,-1):
 
 # To see numbers  <repeted>  {7}
 # #####
+#  this is 7   accuracy:  0.7398843930635838
 # ==========
 
 # To see numbers  <repeted>  {6}
@@ -112,8 +109,12 @@ for i in range(11,1,-1):
 # To see numbers  <repeted>  {2}
 # #####
 # ==========
+
+# To see numbers  <repeted>  {1}
+# #####
+# ==========
 # Final Result :
-# Best Accuracy is :  0.7514450867052023
+# Best Accuracy is :  0.7398843930635838
 # $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 
@@ -124,19 +125,19 @@ for i in range(11,1,-1):
 
 
 # Predict the data first 
-predicted = model.predict(x_test)
-# # To classify from  0 to 3 
-names = ["unacc", "acc", "good", "vgood"]
+# predicted = model.predict(x_test)
+# # # To classify from  0 to 3 
+# names = ["unacc", "acc", "good", "vgood"]
 
-print("\n\n#################################")
-for i in range(len(predicted)):
-    print(f"Data #{i+1}")
-    print("Model Prediction: ", names[predicted[i]])
-    print("Input Data: ", x_test[i])
-    print("Actual Data : ", names[y_test[i]])
-    n = model.kneighbors([x_test[i]] , 3, True)
-    print("N ", n)
-    print("#################################")
+# print("\n\n#################################")
+# for i in range(len(predicted)):
+#     print(f"Data #{i+1}")
+#     print("Model Prediction: ", names[predicted[i]])
+#     print("Input Data: ", x_test[i])
+#     print("Actual Data : ", names[y_test[i]])
+#     n = model.kneighbors([x_test[i]] , 3, True)
+#     print("N ", n)
+#     print("#################################")
      
     
 

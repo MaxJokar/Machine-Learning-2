@@ -1,5 +1,5 @@
 """
-Зython machine learning I'm implementing a support vector machine to
+Python machine learning: I'm implementing a support vector machine to
 classify data. 
 
 """
@@ -12,17 +12,19 @@ from sklearn import metrics
 from sklearn.neighbors import KNeighborsClassifier
 
 data = datasets.load_breast_cancer()
-# we define this dat point is equal to Malignant 
+# we define this data point is equal to Malignant 
 x = data.data
 y = data.target
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.2)
 
 classes = ["Malignant", "Benign"]
 
+
+
 # Support vector classification: SVC
 # kernel='linear',poly brings our dimension up ,hyperplance give much classification 
 model = svm.SVC(kernel="linear", C=3)
-# C=1 hard margin :SVM:  0.9385964912280702 , C=3 SVM:  0.9649122807017544
+# C=1 hard margin ,SVM:  0.9385964912280702 , C=3 SVM:  0.9649122807017544
 
 model.fit(x_train, y_train)
 
@@ -33,6 +35,8 @@ print("SVM: ", accuracy)
 
 
 
+
+# To Compare  SVM  with  KNN :
 model1 = KNeighborsClassifier(n_neighbors=9)
 model1.fit(x_train, y_train)
 

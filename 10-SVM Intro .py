@@ -6,10 +6,11 @@
 
     Note that K-Nearest Neighbors does not perform well on high-dimensional data.
 
-    n short a support vector machine works by dividing data into multiple classes
+    In short a support vector machine works by dividing data into multiple classes
     using something called a hyper-plane. A hyper plane is a fancy word for something
     that is straight that can divide data points. In 2D space a hyper-plane is simply
-    a line, in 3D space a hyper-plane is a plane. In any space higher than 3D it is simply called a hyper-plane.
+    a 'line', in 3D space a hyper-plane is a 'plane'. In any space higher than 3D it 
+    is simply called a hyper-plane.
 
     When we create a hyper-plane we need to do the following.
     We must pick two points that are known as our support vectors.

@@ -28,8 +28,8 @@ predict = "G3"
 pre_prcossing = preprocessing.LabelEncoder()
 sex = pre_prcossing.fit_transform(list(data["sex"]))
 school = pre_prcossing.fit_transform(list(data["school"]))
-my_new_column = pre_prcossing.fit_transform(list(data["sex"]))
-print(f" my new column is  : {my_new_column}")
+# my_new_column = pre_prcossing.fit_transform(list(data["sex"]))
+# print(f" my new column is  : {my_new_column}")
 
 # print(sex)
 # # [0 0 0 0 0 1 1 0 1 ...
