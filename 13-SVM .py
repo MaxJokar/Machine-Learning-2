@@ -1,6 +1,6 @@
 """
 Python machine learning: I'm implementing a support vector machine to
-classify data. 
+classify data AND  compare it with  KNN 
 
 """
 
@@ -47,6 +47,6 @@ accuracy1 = metrics.accuracy_score(y_test, prediction1)
 
 print("KNN: ", accuracy1)
 
-# SVM:  0.9736842105263158
+# SVM:  0.9736842105263158  ==> SVM proves  that it  has a higher/better accuracy than  KNN
 # KNN:  0.9473684210526315
 

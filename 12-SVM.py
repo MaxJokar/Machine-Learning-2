@@ -22,7 +22,9 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y
 classes = ["Malignant", "Benign"]
 print("classes are  ", classes)
 
-# Support vector classification: SVC
+
+print("y test ,  x test  :\n",  y_test , x_test)
+# 3.Support vector classification: SVC
 # liner, poly, rbf , sigmod, brings our dimension up ,hyperplane give much classification
 model = svm.SVC(kernel="linear")  
 print("model is  :" ,model)
