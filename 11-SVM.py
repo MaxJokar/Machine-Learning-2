@@ -11,7 +11,7 @@ import sklearn
 from sklearn import datasets   # To load Datas
 from sklearn import model_selection
 
-# Load data
+#1. Load data
 data = datasets.load_breast_cancer()
 
 print("feature_names :")
@@ -20,7 +20,7 @@ print("target_names :")
 print(len(data.target_names), "---->", data.target_names)
 
 #############
-# Set up X and Ys for a data 
+# 2. Set up X and Ys for a data 
 x = data.data
 y = data.target
 # To split ,to test more test  we make 0.2
@@ -67,3 +67,5 @@ print(y_train)
 #  0 1 0 0 0 0 0 0 1 0 1 1 1 0 0 0 0 1 1 1 0 1 1 0 0 0 0 1 0 1 0 0 1 1 1 0 1
 #  1 1 1 1 1 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 0
 #  0 0 1 0 0 1 0 0 1 0 1]
+
+# To Be Continued,...
