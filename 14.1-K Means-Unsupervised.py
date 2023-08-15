@@ -27,3 +27,7 @@ def bench_k_means(estimator, name, data):
 
 model = KMeans(n_clusters=k, init="random", n_init=10)
 bench_k_means(model, "1", data)
+
+
+# Output :
+# 1               69670   0.679   0.718   0.698   0.571   0.695   0.142
