@@ -8,7 +8,7 @@ from sklearn import metrics
 digit_data = load_digits()
 data = scale(digit_data.data)
 y = digit_data.target
-
+print("this is amount of  clusters :" ,y)
 k = len(np.unique(y))
 samples, features = data.shape
 
