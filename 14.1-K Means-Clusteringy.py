@@ -13,7 +13,6 @@ import matplotlib.pyplot as plt
 # np.random.seed(42)
 
 digits = load_digits()
-<<<<<<< HEAD
 # print(digits)
 
 # {'data': array([[ 0.,  0.,  5., ...,  0.,  0.,  0.],
@@ -77,14 +76,11 @@ digits = load_digits()
 
 
 
-=======
->>>>>>> b542738cce3d0b7ae5a8f0bca8ab56c10579d4d8
 # digits.data is all our features
 # we scale all our feature between 1,-1 because our digits have a large values :RGB value 
 # it saves time on the computaions specially including distance between points so smaller 
 # value would be better ==> make things faster 
 data = scale(digits.data)
-<<<<<<< HEAD
 # print(data)
 
 # [[ 0.         -0.33501649 -0.04308102 ... -1.14664746 -0.5056698 
@@ -101,28 +97,6 @@ data = scale(digits.data)
 #  [ 0.         -0.33501649  1.00877481 ...  0.8876023  -0.26113572
 #   -0.19600752]]
 
-=======
-
-# set amount of clusters that were gonna look for amount of centroids to make 
-y = data.targets
-
-# n_sample , n_featueres = data.shape
-# n_digits = len(np.unique(digits.target))
-
-#  dynamic: if were gonna change dataset above 
-# could be this way too   , static
-k = 10  
-# k = len(np.unique(y))
-samples , features  =  data.shape
-
-# To get the amount of instances or amount of numbers we have that were gonna classify
-#  Amount of features 
-# labels  = digits.target
-
-# sample_size = 300
-
-# print("n_digits, n_sample, n_featueres :", n_digits, n_sample, n_featueres)
->>>>>>> b542738cce3d0b7ae5a8f0bca8ab56c10579d4d8
 
 
 
@@ -136,7 +110,6 @@ print("amount of clusters :" , y)
 k = 10  
 # OR 
 # k = len(np.unique(y))
-<<<<<<< HEAD
 
 
 # Amount of features : To get the amount of instances or amount of numbers we have that were gonna classify
@@ -147,24 +120,13 @@ print("n_digits, n_sample, n_featueres :", samples, features)
 
 # sk learn has a bunch of functions in there that automatically score like 
 # supervised learning /unsupervised learning algorithms 
-=======
-# k = len(np.unique(labels))
-
-
-# sk learn has a bunch of functions in there that automatically score like supervised learning
-# unsupervised learning algorithms 
->>>>>>> b542738cce3d0b7ae5a8f0bca8ab56c10579d4d8
 # homogeneity_score,,...are kind of range we need 
 # estimator is classifier which fits data to the classifier & use bunch of different things to score :homogeneity_score 
 # y is compared to the lables  estimator.labels_ that are estimated gave for each of our data 
 # we dont give the Y value  when we train ,cuz its usupervised ,it automatically generates Y  value  
 # for every single test data point that we give it 
-<<<<<<< HEAD
 # we dont have to split into  trainig and test data  cuz it doent know to start what our data is 
 #  we just can compare the test data lables what our estimator or our classifier estimated (it predicted each label what it was  )
-=======
-# we dont have to split trainig and test cuz it doent know to start what our data is 
->>>>>>> b542738cce3d0b7ae5a8f0bca8ab56c10579d4d8
 def bench_k_means(estimator, name, data):
     estimator.fit(data)
     print('%-9s\t%i\t%.3f\t%.3f\t%.3f\t%.3f\t%.3f\t%.3f'
@@ -176,13 +138,10 @@ def bench_k_means(estimator, name, data):
             metrics.adjusted_mutual_info_score(y,  estimator.labels_),
             metrics.silhouette_score(data, estimator.labels_, metric='euclidean')))
 
-<<<<<<< HEAD
 # Belown we have  A classifier(model) to call our function on our classifier , it prints and trains ton of differet
-# classifiers  & just score them by calling the function above 
-=======
-#  A classifier to call our function on our classifier , it prints and trains ton of differet
-# classifiers a & just score them by calling the function above 
->>>>>>> b542738cce3d0b7ae5a8f0bca8ab56c10579d4d8
+# classifiers  & just score them by calling the function above  
+# n_claster : amount of centroid , init=k_means: change the location of initial centroid , i_init:amount of times 
+# we randomly generate centroid for the first iteration 
 model = KMeans(n_clusters=k, init="random", n_init=10)
 bench_k_means(model, "1", data)
 
