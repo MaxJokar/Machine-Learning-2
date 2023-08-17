@@ -1,5 +1,5 @@
 """
-    A SVM has a large list of applicable uses.
+    A SVM (support vector machine )has a large list of applicable uses.
     However, in machine learning it is typically used for classification.
     It is a powerful tool that is a good choice for classifying complicated
     data with a high degree of dimensions(features).

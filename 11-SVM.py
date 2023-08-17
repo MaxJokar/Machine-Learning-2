@@ -2,7 +2,7 @@
 Here machine learning python  I am introducing SupportVectorMachines.
 This is mainly used for classification and is capable of performing 
 classification for large dimensional data. 
-I will also be showing you how to load datasets straight from the
+I will also be showing how to load datasets straight from the
 sklearn module as Following:
 
 """
