@@ -33,3 +33,35 @@ for i in range(len(predictions)):
     print("Input Data: ", x_test[i])
     print("Real Label: ", y_test[i])
     print("#####################################")
+    
+    
+    
+    
+    # Output:
+    
+    #####################################
+# Data #1
+# Prediction:  9.557302298297516
+# Input Data:  [10  9  3  0  2]
+# Real Label:  10
+# #####################################
+# Data #2
+# Prediction:  8.302965228849349
+# Input Data:  [9 8 3 1 3]
+# Real Label:  8
+# #####################################
+# Data #3
+# Prediction:  16.908261034802674
+# Input Data:  [13 17  2  0  0]
+# Real Label:  17
+# #####################################
+# Data #4
+# Prediction:  16.535368662048366
+# Input Data:  [16 16  3  0  0]
+# Real Label:  16
+# #####################################
+# Data #5
+# Prediction:  11.19806703478032
+# Input Data:  [10 11  1  1 16]
+# Real Label:  11
+# #####################################....

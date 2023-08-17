@@ -43,7 +43,7 @@ class KNN:
         # calculate Distance with all points": we can get certain numbers
         # in all self.X_train sample , separate them, name them as a x_train fin give to the above function
         #  distance include of all new points with all x_train
-        distance = [euclidean_distance(x,x_train) for x_train in self.X_train] 
+        distance = [euclidean_distance(x, x_train) for x_train in self.X_train] 
         # get k nearest samples, Lables 
         # k_indicies : includes index numbers of X_train ,y_train
         # k = 3

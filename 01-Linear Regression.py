@@ -20,42 +20,44 @@ predict = "G3"   # 3. Clean data :G3 is the final grade we want to predict based
 x = np.array(data.drop([predict],axis = 1)) # filterd/cleaned datas : data  without G3
 y = np.array(data[predict]) # Assiagn the Predicted attribute  G3 to : y is our Label
 
-# 4. Pick a  Make  MODEL : and then test with our data x_train
+# 4. Make  MODEL : and then test with our data x_train
+#*** x_train = train , x_test(Input Data) = Prediction , score  , y_test = Label  
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
-linear = linear_model.LinearRegression()
+# Make model
+model = linear_model.LinearRegression()
 
 # 5. Train  Model :Give to the model the TRAIN data: by using  fit
-linear.fit(x_train, y_train)
+model.fit(x_train, y_train)
 
 # 6. Test its CORRECTNESS or Accuracy , checks and predict between xtest with  ytest
-accuracy = linear.score(x_test,y_test)
+accuracy = model.score(x_test,y_test)
 print("Model Accuracy: ", accuracy)  # Model Accuracy:  0.7852231040709795
 # We have a 5 dimensional space here so we have 5 Coefficients! (our line starting position depending on 5 axis )
 
 
 # ====CALCULATE MANUALLY The PREDICT =========TEST for one event/student =====================================================
 
-# a linear equation which exist in our  MODEL : y = mx + b
+# a model equation which exist in our  MODEL : y = mx + b
 # To get  Slops for each feature for one event/student based on :"G1", "G2", "studytime", "failures", "absences"
-print("Coefficient: ", linear.coef_) 
+print("Coefficient: ", model.coef_) 
 # Coefficient:  [ 0.1234198   0.89513708  0.09745936 -0.17585642  0.01760637] ==> feature
 
 # Our intercep/bias 
-print("Intercept: ", linear.intercept_) 
+print("Intercept: ", model.intercept_) 
 # Intercept:  -0.06175788883222211
-#  Calculate Predict by a manual  Linear equation Manually for the equation :   y = mx + b
+#  Calculate Predict by a manual  model equation Manually for the equation :   y = mx + b
 
 # ML predict :
-linear.predict([x_test[0]])
-print(f"this is Linear.predict ,  prediction x_test: {linear.predict([x_test[0]])}")
-# this is Linear.predict ,  prediction x_test: [8.3520414]
+model.predict([x_test[0]])
+print(f"this is model.predict ,  prediction x_test: {model.predict([x_test[0]])}")
+# this is model.predict ,  prediction x_test: [8.3520414]
 
 print(f"this is  x_test[0] :{x_test[0]}")
 # this is  x_test[0] :[8 8 2 0 4]
 
 
 # CALCULATE  predict Manually:
-# y = liner.coenf * x_test .............+ linear.intecept 
+# y = liner.coenf * x_test .............+ model.intecept 
 y = 0.1234198 * 8  +   0.89513708* 8 +  0.09745936* 2 +  -0.17585642* 0 + 0.01760637*4 + -0.06175788883222211
 print(f"Manual predict which is close to  liner.predict : {y}")
 # Manual predict which is close to  liner.predict : 8.35204135116778
@@ -64,7 +66,7 @@ print(f"Manual predict which is close to  liner.predict : {y}")
 
 # =============For all  Events/Students in our data set===========================================
 print("\n\n#####################################")
-predictions = linear.predict(x_test)
+predictions = model.predict(x_test)
 for i in range(len(predictions)):
     print(f"Data #{i+1}")
     print("Prediction: ", predictions[i])
