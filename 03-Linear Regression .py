@@ -32,13 +32,8 @@ for i in range(len(predictions)):
     print("Model Prediction: ", predictions[i])
     print("Input Data: ", x_test[i])
     print("Real Label: ", y_test[i])
-    print("#####################################")
-    
-    
-    
-    
-    # Output:
-    
+    print("#####################################")  
+# Output:
     #####################################
 # Data #1
 # Prediction:  9.557302298297516

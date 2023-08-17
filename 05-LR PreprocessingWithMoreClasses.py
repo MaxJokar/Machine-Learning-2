@@ -1,15 +1,12 @@
 """ 
-Unlike previous code here we can have more than 2 classes  , so to convert from string into Numeric 
-we must use the Below codes.Here I am showing how to convert several Columns having several classes and not only two .
-usirng  preprocessing module 
+Unlike previous code here we could  have more than 2 classes in our feature , to convert from string into Numeric 
+we must use the Below Method.Here I am showing how to convert several Columns 
+having several classes and not only two  usirng  preprocessing module 
 """
 import numpy as np
 import pandas as pd
 import sklearn
 from sklearn import linear_model
-import pickle
-import matplotlib.pyplot as plt
-from matplotlib import style
 import joblib
 #  import a new module for 
 from sklearn import preprocessing

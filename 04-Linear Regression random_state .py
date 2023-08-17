@@ -1,6 +1,7 @@
 """
-To stabilize and have  constant or stable result , so every time we dont take random rows or columns
-then we will have very different numbers every time we run this program 
+To stabilize and have  constant or stable result , every time we dont get  
+random  numbers  for rows or columns we add random_state as following"
+without that  we will have very different numbers every time we run 
 """
 
 import numpy as np

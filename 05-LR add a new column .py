@@ -1,8 +1,8 @@
 """
-we add one Column to our dataFrame, it has only  2 classes  like  Male,Female .
+we add one Column n_sex to our dataFrame, it has only  2 classes  like  Male,Female .
 So, we convert it into  1 for Males and  0 for  females . Converting string into Numeric 
 If only it has just 2 classes like  F , M ==> 0,1
-Then  we createa new column in our DataFrame  and fill in its rows , 
+Then  we createa new column in our DataFrame  and fill in its rows by a Loop for , 
 also 
 using Pandas how to convert a  string into  Numeric 
 """
@@ -38,7 +38,8 @@ predict = "G3"
 #  M
 
 # 1. Add a new Column to our Data Frame:
-# In Pandas if you make a column you should have data for each its row !
+# In Pandas if you make a column you should have data for each its row ,
+# we use a for loop to fill in  its row !
 #  We create  a new column n_sex  with  0,1 instead of  its values F=0 , M=1
 # This shows how we can create a new column and change its strings into Numeric 
 data["n_sex"] = [ 0 if  i == "F" else 1 for i in data["sex"]]
